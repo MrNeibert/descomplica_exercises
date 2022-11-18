@@ -1,3 +1,4 @@
+import javax.swing.*;
 class Pratica13
 {
    public static void main(String entrada[])
