@@ -1,5 +1,5 @@
 import javax.swing.*;
-class pratica14
+class pratica02
 {
     public static void main(String entrada []) {
       //variables 
