@@ -1,7 +1,26 @@
 import java.util.Scanner;
 
-public class calculator {
-
+public class Main {
+  
+  private static int pegaNumero(){
+    Scanner sc = new Scanner(System.in);
+    String inputString ="";
+    Integer inputInt;
+    
+    do {
+      try {
+        inputString = sc.nextLine();
+        inputInt = Integer.parseInt(inputString);
+        break;
+      } catch (Exception e){
+        System.out.println("Você colocou um input inválido:" + inputString);
+        System.out.println("Seu erro é:" + e.getMessage());
+        System.out.println("Digite um número válido!");
+      }
+    } while (true);
+    return inputInt;
+  }
+  
   public static String umNumero(int escolha, int n1) {
     String resultado = "";
     int result = 1;
@@ -13,16 +32,14 @@ public class calculator {
         n1--;
       }
       resultado = String.format("O resultado é %d", result);
-      return resultado;
     } else {
       if (n1 % 2 != 0) {
         resultado = "O número é impar!";
-        return resultado;
       } else {
         resultado = "O número é par!";
-        return resultado;
       }
     }
+    return resultado;
   }
 
   public static String doisNumeros(int escolha, int n1, int n2) {
@@ -53,21 +70,23 @@ public class calculator {
   }
 
   public static void main(String[] args) {
-    Scanner sc = new Scanner(System.in);
+    Scanner sc = new Scanner(System.in); //Scanner para pescar input.
+    // lembrar que Scanner.nextLine() pesca o <enter> tbm!!
 
     // variáveis
     Integer escolha = null;
     String msg = "";
     int n1;
     int n2;
-    String loop = "y"; // loop do programa
+    String loop = "y"; 
 
+    // loop do programa
     while (loop.startsWith("y")) {
       do {
         System.out.println(
             "Qual operação você gostaria de executar? \n1-Soma\n2-Subtração\n3-Multiplicação\n4-Divisão\n5-Potencialização\n6-Fatorial\n7-Impar/Par");
-        escolha = Integer.parseInt(sc.nextLine());
-      } while (escolha < 1 || escolha > 7);
+        escolha = pegaNumero();
+      } while (escolha < 1 || escolha > 7); //verifica se foi escolhida uma opção válida
 
       if (escolha == 6 || escolha == 7) {
         System.out.println("Qual número você gostaria?");
@@ -90,18 +109,4 @@ public class calculator {
     sc.close();
   }
 }
-
-
-
-
-    /* 
-
-    public static void operacao (int x) {
-    String[] list = {"null","Soma","Subtração","Multiplicação","Divisão","Potencialização","Fatorial","Impar/Par"};
-    if (x == 1){  
-      
-      
-      
-      
-    */
 
