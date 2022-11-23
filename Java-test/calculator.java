@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class Main {
+public class calculator {
   
   private static int pegaNumero(){
     Scanner sc = new Scanner(System.in);
