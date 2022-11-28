@@ -1,4 +1,4 @@
-import javax.swing.*;
+
 class pratica02
 {
     public static void main(String entrada []) {
