@@ -18,6 +18,7 @@ public class calculator {
         System.out.println("Digite um número válido!");
       }
     } while (true);
+    sc.close();
     return inputInt;
   }
   
